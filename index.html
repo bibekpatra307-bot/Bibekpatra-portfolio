@@ -492,7 +492,7 @@
 <style>
 @keyframes blog-scroll {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(50%); }
+    100% { transform: translateX(-50%); }
 }
 #blog-track:hover { animation-play-state: paused; }
 .blog-card {
@@ -531,7 +531,7 @@
         { img:"https://i.ibb.co/qY6gmjHL/Screenshot-2026-06-18-155404.png", tag:"AI", title:"Vivika AI", desc:"Advanced conversational AI for human-like interaction.", link:"https://bibekpatra307-bot.github.io/Vivika/" },
     ];
     const track = document.getElementById('blog-track');
-    const doubled = [...blogs, ...blogs];
+    const doubled = [...blogs, ...blogs, ...blogs];
     track.innerHTML = doubled.map(p =>
         `<div class="blog-card">
             <img src="${p.img}" alt="${p.title}" loading="lazy"/>
@@ -543,6 +543,39 @@
             </div>
         </div>`
     ).join('');
+
+    const totalCards = blogs.length;
+    const cardWidth = 280 + 20;
+    const totalWidth = totalCards * cardWidth;
+    track.style.animation = 'none';
+    track.style.setProperty('--scroll-width', totalWidth + 'px');
+
+    let pos = 0;
+    function animate(){
+        pos -= 0.5;
+        if(Math.abs(pos) >= totalWidth) pos = 0;
+        track.style.transform = 'translateX(' + pos + 'px)';
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+    track.addEventListener('mouseleave', () => { });
+
+    let paused = false;
+    track.addEventListener('mouseenter', () => paused = true);
+    track.addEventListener('mouseleave', () => paused = false);
+
+    pos = 0;
+    function animate2(){
+        if(!paused) {
+            pos -= 0.5;
+            if(Math.abs(pos) >= totalWidth) pos = 0;
+            track.style.transform = 'translateX(' + pos + 'px)';
+        }
+        requestAnimationFrame(animate2);
+    }
+    animate2();
 })();
 </script>
 
