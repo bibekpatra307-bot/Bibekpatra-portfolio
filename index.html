@@ -479,39 +479,72 @@
 <!-- ════════════════════════════════════════════════════════ -->
 <!--  BLOG  (unchanged)                                     -->
 <!-- ════════════════════════════════════════════════════════ -->
-<section id="blog" class="py-20 max-w-7xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-10" data-aos="fade-up">Blog</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-        <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg glass" data-aos="fade-up">
-            <img src="https://i.ibb.co/ZzNJ1f22/Whats-App-Image-2026-06-10-at-11-12-06-AM.jpg" class="w-full h-44 object-cover" />
-            <div class="p-5">
-                <span class="text-xs text-primary font-semibold">Technology</span>
-                <h3 class="font-bold mt-1">How AI is Changing Publishing</h3>
-                <p class="text-gray-500 text-sm mt-2">Discover the latest trends...</p>
-                <a href="#" class="text-primary text-sm mt-3 inline-block">Read More →</a>
-            </div>
-        </article>
-        <!-- two more blog cards to keep grid consistent -->
-        <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg glass" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://i.ibb.co/ZzNJ1f22/Whats-App-Image-2026-06-10-at-11-12-06-AM.jpg" class="w-full h-44 object-cover" />
-            <div class="p-5">
-                <span class="text-xs text-primary font-semibold">Entrepreneurship</span>
-                <h3 class="font-bold mt-1">Building a Startup in 2026</h3>
-                <p class="text-gray-500 text-sm mt-2">Key lessons from the journey...</p>
-                <a href="#" class="text-primary text-sm mt-3 inline-block">Read More →</a>
-            </div>
-        </article>
-        <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg glass" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://i.ibb.co/ZzNJ1f22/Whats-App-Image-2026-06-10-at-11-12-06-AM.jpg" class="w-full h-44 object-cover" />
-            <div class="p-5">
-                <span class="text-xs text-primary font-semibold">Design</span>
-                <h3 class="font-bold mt-1">3D Design Trends</h3>
-                <p class="text-gray-500 text-sm mt-2">What's next in product visualization...</p>
-                <a href="#" class="text-primary text-sm mt-3 inline-block">Read More →</a>
-            </div>
-        </article>
+<section id="portfolio" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-10" data-aos="fade-up">Portfolio</h2>
+    </div>
+
+    <div style="overflow:hidden;width:100%">
+        <div id="port-track" style="display:flex;gap:16px;width:max-content;animation:port-scroll 22s linear infinite">
+        </div>
     </div>
 </section>
+
+<style>
+@keyframes port-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+#port-track:hover { animation-play-state: paused; }
+.port-card {
+    width: 210px;
+    min-width: 210px;
+    border-radius: 16px;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.dark .port-card { background: #374151; }
+.port-card img { width:100%; height:150px; object-fit:cover; display:block; }
+.port-card-body { padding:12px; display:flex; flex-direction:column; flex:1; gap:6px; }
+.port-card-title { font-size:14px; font-weight:700; color:#111827; margin:0; }
+.dark .port-card-title { color:#f3f4f6; }
+.port-card-desc { font-size:12px; color:#6b7280; margin:0; line-height:1.5; flex:1; }
+.port-card-btn {
+    display:block; text-align:center;
+    background:#6C3BFF; color:#fff;
+    font-size:12px; padding:7px 0;
+    border-radius:8px; text-decoration:none;
+    margin-top:4px;
+}
+.port-card-btn:hover { background:#5530cc; }
+</style>
+
+<script>
+(function(){
+    const projects = [
+        { img:"https://i.ibb.co/ZzNJ1f22/Whats-App-Image-2026-06-10-at-11-12-06-AM.jpg", title:"Krayvo",         desc:"Smart e‑commerce platform accessing multiple marketplaces.",                  link:"https://bibekpatra307-bot.github.io/Krayvo/" },
+        { img:"https://i.ibb.co/bgK599NY/Whats-App-Image-2026-06-18-at-1-27-38-PM.jpg", title:"Chitt Vijay",                desc:"मन पर विजय की संवाद यात्रा.",            link:"https://bibekbook.store" },
+        { img:"https://i.ibb.co/DfKGCRKM/Whats-App-Image-2026-06-18-at-1-29-04-PM.jpg", title:"Gengram",                  desc:"Next-gen social networking and community platform.",          link:"https://gengram.online" },
+        { img:"https://i.ibb.co/qY6gmjHL/Screenshot-2026-06-18-155404.png", title:"Vivika AI",                desc:"Advanced conversational AI for human-like interaction.",     link:"https://bibekpatra307-bot.github.io/Vivika/" },
+    ];
+    const track = document.getElementById('port-track');
+    const doubled = [...projects, ...projects];
+    track.innerHTML = doubled.map(p =>
+        `<div class="port-card">
+            <img src="${p.img}" alt="${p.title}" loading="lazy"/>
+            <div class="port-card-body">
+                <p class="port-card-title">${p.title}</p>
+                <p class="port-card-desc">${p.desc}</p>
+                <a class="port-card-btn" href="${p.link}" target="_blank">View Project</a>
+            </div>
+        </div>`
+    ).join('');
+})();
+</script>
+
 
 
 <!-- ════════════════════════════════════════════════════════ -->
