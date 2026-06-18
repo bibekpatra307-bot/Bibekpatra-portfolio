@@ -484,17 +484,13 @@
         <h2 class="text-4xl font-bold text-center mb-10" data-aos="fade-up">Blog</h2>
     </div>
     <div style="overflow:hidden;width:100%">
-        <div id="blog-track" style="display:flex;gap:20px;width:max-content;animation:blog-scroll 25s linear infinite">
+        <div id="blog-track" style="display:flex;gap:20px;width:max-content">
         </div>
     </div>
 </section>
 
 <style>
-@keyframes blog-scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-#blog-track:hover { animation-play-state: paused; }
+#blog-track { will-change: transform; }
 .blog-card {
     width: 280px;
     min-width: 280px;
@@ -530,9 +526,10 @@
         { img:"https://i.ibb.co/DfKGCRKM/Whats-App-Image-2026-06-18-at-1-29-04-PM.jpg", tag:"Social Media", title:"Gengram", desc:"Next-gen social networking and community platform.", link:"https://gengram.online" },
         { img:"https://i.ibb.co/qY6gmjHL/Screenshot-2026-06-18-155404.png", tag:"AI", title:"Vivika AI", desc:"Advanced conversational AI for human-like interaction.", link:"https://bibekpatra307-bot.github.io/Vivika/" },
     ];
+
     const track = document.getElementById('blog-track');
-    const doubled = [...blogs, ...blogs, ...blogs];
-    track.innerHTML = doubled.map(p =>
+    const tripled = [...blogs, ...blogs, ...blogs];
+    track.innerHTML = tripled.map(p =>
         `<div class="blog-card">
             <img src="${p.img}" alt="${p.title}" loading="lazy"/>
             <div class="blog-card-body">
@@ -544,41 +541,25 @@
         </div>`
     ).join('');
 
-    const totalCards = blogs.length;
     const cardWidth = 280 + 20;
-    const totalWidth = totalCards * cardWidth;
-    track.style.animation = 'none';
-    track.style.setProperty('--scroll-width', totalWidth + 'px');
-
-    let pos = 0;
-    function animate(){
-        pos -= 0.5;
-        if(Math.abs(pos) >= totalWidth) pos = 0;
-        track.style.transform = 'translateX(' + pos + 'px)';
-        requestAnimationFrame(animate);
-    }
-    animate();
-
-    track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
-    track.addEventListener('mouseleave', () => { });
-
+    const totalWidth = blogs.length * cardWidth;
+    let pos = -totalWidth;
     let paused = false;
+
     track.addEventListener('mouseenter', () => paused = true);
     track.addEventListener('mouseleave', () => paused = false);
 
-    pos = 0;
-    function animate2(){
-        if(!paused) {
-            pos -= 0.5;
-            if(Math.abs(pos) >= totalWidth) pos = 0;
+    function animate(){
+        if(!paused){
+            pos += 0.5;
+            if(pos >= 0) pos = -totalWidth;
             track.style.transform = 'translateX(' + pos + 'px)';
         }
-        requestAnimationFrame(animate2);
+        requestAnimationFrame(animate);
     }
-    animate2();
+    animate();
 })();
 </script>
-
 
 <!-- ════════════════════════════════════════════════════════ -->
 <!--  CONTACT  (unchanged)                                  -->
