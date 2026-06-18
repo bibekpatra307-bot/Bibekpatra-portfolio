@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibek Patra | Founder, Developer & Entrepreneur</title>
+  <meta name="description" content="Official website of Bibek Patra, entrepreneur, developer, author and founder of BibekBook, Gengram, Vivika AI and Krayvo.">
+  <meta name="keywords" content="Bibek Patra, BibekBook, Gengram, Vivika AI, Krayvo, Entrepreneur, Developer">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6C3BFF',
+            secondary: '#111827',
+            accent: '#F59E0B',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    html { scroll-behavior: smooth; }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-10px); }
+    }
+    .dark body { background: #111827; color: #f3f4f6; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
+  <!-- Dark Mode Toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <button onclick="document.documentElement.classList.toggle('dark')" class="p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg">
+      <i class="fas fa-moon dark:hidden"></i>
+      <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+    </button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full glass dark:bg-gray-900/70 shadow-sm z-40">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Bibek Patra</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="font-medium hover:text-primary">Home</a>
+        <a href="#about" class="font-medium hover:text-primary">About</a>
+        <a href="#projects" class="font-medium hover:text-primary">Projects</a>
+        <a href="#services" class="font-medium hover:text-primary">Services</a>
+        <a href="#contact" class="font-medium hover:text-primary">Contact</a>
+      </div>
+      <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-primary/10 to-accent/10">
+    <div class="text-center px-4">
+      <img src="https://via.placeholder.com/150" alt="Bibek Patra" class="w-36 h-36 rounded-full mx-auto border-4 border-primary shadow-xl mb-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Hi, I'm Bibek Patra</h1>
+      <p class="text-xl md:text-2xl mt-4 font-medium">Founder of BibekBook, Gengram, Vivika AI and Krayvo.</p>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">I build innovative digital products in publishing, AI, social media, e-commerce, web dev & 3D design.</p>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 transition">View Projects</a>
+        <a href="#contact" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-white transition">Contact Me</a>
+        <a href="#" class="bg-accent text-black px-6 py-3 rounded-xl font-medium hover:bg-yellow-500 transition">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-10">About Bibek Patra</h2>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="https://via.placeholder.com/400x300" alt="About" class="rounded-2xl shadow-lg">
+      <div>
+        <p class="text-lg leading-relaxed">Bibek Patra is an entrepreneur, developer, author and technology creator from Mayurbhanj, Odisha, India. He is the founder of multiple digital ventures including BibekBook, Gengram, Vivika AI and Krayvo. His work focuses on publishing tech, artificial intelligence, social networking, e-commerce, web development, and 3D design.</p>
+        <div class="mt-6">
+          <h3 class="text-xl font-semibold mb-3">Skills</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Web Development</span>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AI Development</span>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">SEO</span>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Digital Marketing</span>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">3D Design</span>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Graphic Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-10">My Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project Cards -->
+        <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg glass">
+          <img src="https://via.placeholder.com/600x300?text=BibekBook" alt="BibekBook" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs text-primary font-semibold">Publishing Platform</span>
+            <h3 class="text-xl font-bold mt-1">BibekBook</h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">A platform for authors to publish and manage books digitally.</p>
+            <div class="flex gap-3 mt-4">
+              <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Live Demo</a>
+              <a href="#" class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition">Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg glass">
+          <img src="https://via.placeholder.com/600x300?text=Gengram" alt="Gengram" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs text-primary font-semibold">Social Media</span>
+            <h3 class="text-xl font-bold mt-1">Gengram</h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Next-gen social platform focused on engagement and community.</p>
+            <div class="flex gap-3 mt-4">
+              <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Live Demo</a>
+              <a href="#" class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition">Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg glass">
+          <img src="https://via.placeholder.com/600x300?text=Vivika+AI" alt="Vivika AI" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs text-primary font-semibold">AI</span>
+            <h3 class="text-xl font-bold mt-1">Vivika AI</h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Advanced conversational AI assistant for human-like interactions.</p>
+            <div class="flex gap-3 mt-4">
+              <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Live Demo</a>
+              <a href="#" class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition">Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg glass">
+          <img src="https://via.placeholder.com/600x300?text=Krayvo" alt="Krayvo" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs text-primary font-semibold">E-Commerce</span>
+            <h3 class="text-xl font-bold mt-1">Krayvo</h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Smart e-commerce platform accessing multiple marketplaces.</p>
+            <div class="flex gap-3 mt-4">
+              <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Live Demo</a>
+              <a href="#" class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-10">Services</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl shadow-md bg-white dark:bg-gray-800 glass">
+        <h3 class="text-xl font-bold">Web Development</h3>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">Modern responsive websites.</p>
+        <p class="text-primary font-semibold mt-3">Starting ₹15,000</p>
+        <button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg w-full">Contact</button>
+      </div>
+      <div class="p-6 rounded-2xl shadow-md bg-white dark:bg-gray-800 glass">
+        <h3 class="text-xl font-bold">AI Solutions</h3>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">Custom chatbots & automation.</p>
+        <p class="text-primary font-semibold mt-3">Starting ₹25,000</p>
+        <button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg w-full">Contact</button>
+      </div>
+      <div class="p-6 rounded-2xl shadow-md bg-white dark:bg-gray-800 glass">
+        <h3 class="text-xl font-bold">SEO Optimization</h3>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">Rank higher on Google.</p>
+        <p class="text-primary font-semibold mt-3">Starting ₹8,000</p>
+        <button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg w-full">Contact</button>
+      </div>
+      <div class="p-6 rounded-2xl shadow-md bg-white dark:bg-gray-800 glass">
+        <h3 class="text-xl font-bold">3D Design</h3>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">Product mockups & assets.</p>
+        <p class="text-primary font-semibold mt-3">Starting ₹12,000</p>
+        <button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg w-full">Contact</button>
+      </div>
+      <div class="p-6 rounded-2xl shadow-md bg-white dark:bg-gray-800 glass">
+        <h3 class="text-xl font-bold">Digital Marketing</h3>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">Social media & Google Ads.</p>
+        <p class="text-primary font-semibold mt-3">Starting ₹10,000/mo</p>
+        <button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg w-full">Contact</button>
+      </div>
+      <div class="p-6 rounded-2xl shadow-md bg-white dark:bg-gray-800 glass">
+        <h3 class="text-xl font-bold">Graphic Design</h3>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">Logo, branding, posts.</p>
+        <p class="text-primary font-semibold mt-3">Starting ₹3,000</p>
+        <button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg w-full">Contact</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+      <p class="mb-8 text-lg">Feel free to reach out for collaborations or just a friendly hello.</p>
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="mailto:inboxtobibek@gmail.com" class="text-3xl hover:text-primary"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/918280482686" target="_blank" class="text-3xl hover:text-primary"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="text-3xl hover:text-primary"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@gtbcreates" target="_blank" class="text-3xl hover:text-primary"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="text-3xl hover:text-primary"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <form action="#" class="space-y-4 max-w-md mx-auto">
+        <input type="text" placeholder="Your Name" class="w-full p-3 rounded-xl border dark:bg-gray-700" required>
+        <input type="email" placeholder="Email" class="w-full p-3 rounded-xl border dark:bg-gray-700" required>
+        <textarea placeholder="Message" class="w-full p-3 rounded-xl border dark:bg-gray-700" rows="4" required></textarea>
+        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-xl hover:bg-purple-700 transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-900 py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="#" class="hover:text-primary">Home</a>
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#projects" class="hover:text-primary">Projects</a>
+        <a href="#services" class="hover:text-primary">Services</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
+      </div>
+      <p class="text-sm">© 2026 Bibek Patra. All Rights Reserved. Developed by Bibek Patra.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Simple mobile menu toggle (can be expanded) -->
+  <script>
+    // Basic mobile nav toggle (just for demo)
+    // You can add functionality if needed.
+  </script>
+</body>
+</html>
